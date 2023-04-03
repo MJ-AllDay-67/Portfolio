@@ -9,17 +9,17 @@ class DataImport:
         self.self = self
         
     def importcsv(self, data_file):
-        df_out = pd.read_csv(f'C:/Users/15514/OneDrive/Desktop/MichaelTiernan/Projects/Data/{data_file}.csv')
+        df_out = pd.read_csv(f'C:/Users/15514/OneDrive/Desktop/MichaelTiernan/Portfolio/Data/{data_file}.csv')
         
         return df_out
 
 ########### Import Data ###########
 object_1 = DataImport()
-df_teams = object_1.importcsv("Teams")
-df_gamelogs = object_1.importcsv("gamelogs")
-df_stats = object_1.importcsv("stats")
+df_batting = object_1.importcsv("Batting")
+df_people = object_1.importcsv("People")
+df_player_stats = object_1.importcsv("stats")
+df_hof = object_1.importcsv("HallOfFame")
 
-print("hello world")
 # print(df_teams.head())
 # print(df_gamelogs.head())
 # print(df_stats.head())
