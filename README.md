@@ -1,4 +1,5 @@
-# Michael Tiernan's Portfolio
+![image](https://github.com/MJ-AllDay-67/Portfolio/assets/67566192/5d21c22f-a5a3-42ae-8f16-a9c6571f9c3e)
+
 
 ## To Prespective Employers:
  I am a proven data professional with 7+ years in the market research industry, with a background in Operations, Analytics, and Data Science. I work collaboratively across multiple departments, manage direct reports, as well as pride myself on completing long bouts of deep work to create, design, and enhance ML techniques that have added significant value to my current employer. Due to this being a competitive space, I have published my portfolio for you to get a better understanding of my capabilities.
