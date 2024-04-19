@@ -16,4 +16,4 @@ If you are looking for someone with a proven track record of solving complex bus
  In the 'NLP_Ecommerce_Classification.ipynb' notebook, you will find the following:
  - Extensive EDA on text column 'item_description', uncovering and visualizing relationships between words within each of the 'labels' (Household, Books, Electronics, Clothing & Accessories) of the e-commerce dataset
  - ML techniques for classification i.e. LinearSVC, MultiNomialNB, and Neural Networks
- - Evaluation and improving models
+ - Evaluation and improvement of models
