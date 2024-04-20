@@ -8,7 +8,7 @@
  ## Why me?
  Shortly after the Covid-19 pandemic hit, I enrolled in a 10-month long Data Science Bootcamp from Aug'20 - Jun'21. I have not stopped learning since, enhancing my knowledge and skillset by reading books and completing multiple online courses. Over the past 4 years, I have applied these skills to my work, creating significant value to my current employer by automating reports, creating a user-friendly program for the analytics team to work out of (effectively sunsetting Tableau and Alteryx licenses), and enhancing coverage and accuracy for our ML classification of receipt-based data submitted by our panelists of consumers.
 
-I am actively engaged in keeping up with the latest and greatest advancements in AI (that seem to be changing almost daily), and have experience with tabular, text, and image data. 
+I am actively engaged in keeping up with the latest and greatest advancements in AI (that seem to be changing almost daily), and have experience running Neural Nets and other ML models using tabular, text, and image data. 
 
 If you are looking for someone with a proven track record of solving complex business problems, is committed to continuously learning, and works well in a collaborative setting, I am open to new opportunities.
 
