@@ -3,7 +3,7 @@
 
 
 ## To Prespective Employers:
- I am a proven data professional with 9+ years in the market research industry (general merchandise/consumer goods), with a background in Operations, Analytics, and Data Science. I excel in a cross-functional environment, leveraging my leadership skills to effectively manage direct reports. Most importantly, I dedicate myself to completing long bouts of deep work to create, design, and enhance ML techniques that have added significant value to my current employer. 
+ I am a proven data professional with 9+ years in the market research industry (general merchandise/consumer goods), with a background in Operations, Analytics, and Data Science. I excel in a cross-functional environment, leveraging my leadership skills to effectively manage direct reports. Most importantly, I dedicate myself to completing long bouts of deep work to automate tasks, as well as create, design, and enhance ML techniques that have both added significant value to my current employer. 
  
  Due to this being a competitive space, I have published my portfolio for you to get a better understanding of my capabilities.
 
