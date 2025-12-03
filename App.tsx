@@ -5,6 +5,8 @@ import SkillChart from './components/SkillChart';
 import TechNetwork from './components/TechNetwork';
 import CareerTree from './components/CareerTree';
 import CareerHighlights from './components/CareerHighlights';
+import WhatImLookingFor from './components/WhatImLookingFor';
+import WhatYouGet from './components/WhatYouGet';
 import { Project, ViewState, CareerItem } from './types';
 
 const projects: Project[] = [
@@ -102,7 +104,7 @@ const careerHistory: CareerItem[] = [
     role: "Lead AI Engineer",
     company: "Levee",
     period: "May 2024 - Present",
-    description: "Awarded Top Travel and Hospitality Startup (Seed) in North America by PhocusWright for 2025. Levee uses CV + Agents within hotels to increase overall operational efficiency. As the first employee (outside of the two Co-Founders), I built the initial object detection model and am responsible for implementing our end-to-end CV pipeline, from annotation to deployment. Also implemented multi-agent systems and frontend apps for both internal and external use.",
+    description: "Awarded Top Travel and Hospitality Startup (Seed) in North America by PhocusWright for 2025. Levee uses CV + Agents within hotels to unlock overall operational efficiency. As the first employee (outside of the two Co-Founders), I built the initial object detection model and am responsible for implementing our end-to-end CV pipeline, from annotation to deployment. Also implemented multi-agent systems and frontend apps for both internal and external use.",
     technologies: ["Computer Vision", "LLMs", "Traditional ML", "Git", "Jira", "Google Cloud", "VLMs", "Swagger", "Docker", "Vercel"]
   }
 ];
@@ -151,10 +153,24 @@ const App: React.FC = () => {
             </div>
 
             {/* Career Highlights Section - Continues from CareerTree */}
-            <div className="w-full pt-0 pb-20">
+            <div className="w-full pt-0 pb-0">
                <h2 className="text-4xl font-bold mb-4 text-center neon-text tracking-widest">CAREER HIGHLIGHTS</h2>
                <p className="text-gray-400 mb-8">Key achievements and impact.</p>
                <CareerHighlights />
+            </div>
+
+            {/* What I'm Looking For Section - Continues from CareerHighlights */}
+            <div className="w-full pt-12 pb-0">
+               <h2 className="text-4xl font-bold mb-4 text-center neon-text tracking-widest">WHAT I'M LOOKING FOR NEXT</h2>
+               <p className="text-gray-400 mb-8">Mission parameters.</p>
+               <WhatImLookingFor />
+            </div>
+
+            {/* What You Get Section - Continues from WhatImLookingFor */}
+            <div className="w-full pt-12 pb-20">
+               <h2 className="text-4xl font-bold mb-4 text-center neon-text tracking-widest">WHAT DO YOU GET FROM ME?</h2>
+               <p className="text-gray-400 mb-8">My work principles.</p>
+               <WhatYouGet />
             </div>
             
             <div className="mt-10 w-full max-w-4xl mx-auto opacity-0 animate-[fadeIn_1s_ease-out_1s_forwards]">
