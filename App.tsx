@@ -4,6 +4,7 @@ import AIChat from './components/AIChat';
 import SkillChart from './components/SkillChart';
 import TechNetwork from './components/TechNetwork';
 import CareerTree from './components/CareerTree';
+import CareerHighlights from './components/CareerHighlights';
 import { Project, ViewState, CareerItem } from './types';
 
 const projects: Project[] = [
@@ -71,7 +72,7 @@ const careerHistory: CareerItem[] = [
     role: "Manager, Production Management",
     company: "The NPD Group",
     period: "Jul 2021 - Jul 2022",
-    description: "With my new skills from the bootcamp, I took a larger role in processing our CPG data, implementing python to build custom scripts to automate several data cleaning processes and client reports.",
+    description: "With my new skills from the bootcamp, I took a larger role in processing our CPG Receipt-based data, implementing python to build custom scripts to automate several data cleaning processes and client reports.",
     technologies: ["Snowflake", "SQL", "Alteryx", "Python"]
   },
   {
@@ -80,7 +81,7 @@ const careerHistory: CareerItem[] = [
     company: "The NPD Group + Circana",
     companyNote: "(NPD + IRI merged to form Circana)",
     period: "Jul 2022 - Aug 2023",
-    description: "Built a custom program for the Analytics team to use for analyzing our CPG data at the buyer-level. This program was built using PySpark in Databricks and ultimately replaced all Tableau and Alteryx licenses for the team of 10 analysts.",
+    description: "Built a custom program for the Analytics team to use for analyzing our CPG data at the buyer-level and creating client reports. This program ultimately replaced all Tableau and Alteryx licenses and was a MASSIVE time saver for the team of 10 analysts.",
     technologies: ["PySpark", "Databricks", "Tableau"]
   },
   {
@@ -101,7 +102,7 @@ const careerHistory: CareerItem[] = [
     role: "Lead AI Engineer",
     company: "Levee",
     period: "May 2024 - Present",
-    description: "PhocusWright's Global Startup Winner for 2025. Levee uses CV + Agents within hotels to increase overall operational efficiency. As the first employee (outside of the two Co-Founders), I built the initial object detection model and am responsible for implementing our end-to-end CV pipeline, from annotation to deployment. Also implemented multi-agent systems and frontend apps for both internal and external use.",
+    description: "Awarded Top Travel and Hospitality Startup (Seed) in North America by PhocusWright for 2025. Levee uses CV + Agents within hotels to increase overall operational efficiency. As the first employee (outside of the two Co-Founders), I built the initial object detection model and am responsible for implementing our end-to-end CV pipeline, from annotation to deployment. Also implemented multi-agent systems and frontend apps for both internal and external use.",
     technologies: ["Computer Vision", "LLMs", "Traditional ML", "Git", "Jira", "Google Cloud", "VLMs", "Swagger", "Docker", "Vercel"]
   }
 ];
@@ -143,13 +144,20 @@ const App: React.FC = () => {
             </div>
 
             {/* Career Timeline Section */}
-            <div className="w-full border-t border-slate-800/50 pt-20 pb-10">
+            <div className="w-full border-t border-slate-800/50 pt-20 pb-0">
                <h2 className="text-4xl font-bold mb-4 text-center neon-text tracking-widest">CAREER TRAJECTORY</h2>
-               <p className="text-gray-400 mb-12">A Professional + Personal Timeline.</p>
+               <p className="text-gray-400 mb-12">A <span className="text-blue-400">Professional</span> + <span className="text-pink-400">Personal</span> Timeline.</p>
                <CareerTree items={careerHistory} />
             </div>
+
+            {/* Career Highlights Section - Continues from CareerTree */}
+            <div className="w-full pt-0 pb-20">
+               <h2 className="text-4xl font-bold mb-4 text-center neon-text tracking-widest">CAREER HIGHLIGHTS</h2>
+               <p className="text-gray-400 mb-8">Key achievements and impact.</p>
+               <CareerHighlights />
+            </div>
             
-            <div className="mt-20 w-full max-w-4xl mx-auto opacity-0 animate-[fadeIn_1s_ease-out_1s_forwards]">
+            <div className="mt-10 w-full max-w-4xl mx-auto opacity-0 animate-[fadeIn_1s_ease-out_1s_forwards]">
               <div className="p-1 border border-blue-500/20 rounded-xl bg-black/40 backdrop-blur">
                 <h3 className="text-center text-blue-400 mb-4 text-sm tracking-widest uppercase mt-4">Proficiency Matrix</h3>
                 <SkillChart />
@@ -248,7 +256,7 @@ const App: React.FC = () => {
       <nav className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/10 py-3' : 'py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="text-2xl font-black tracking-widest cursor-pointer hover:text-blue-400 transition-colors" onClick={() => setActiveView(ViewState.HOME)}>
-            NEXUS
+            MICHAEL TIERNAN
           </div>
           <div className="hidden md:flex space-x-6 lg:space-x-8">
             {[
@@ -277,12 +285,12 @@ const App: React.FC = () => {
         {renderContent()}
       </main>
 
-      {/* AI Assistant */}
-      <AIChat />
+      {/* AI Assistant - Dev Only */}
+      {import.meta.env.DEV && <AIChat />}
 
       {/* Footer */}
       <footer className="relative z-10 py-8 border-t border-slate-800 text-center text-gray-600 text-sm">
-        <p>&copy; 2024 NEXUS SYSTEMS. ALL RIGHTS RESERVED.</p>
+        <p>&copy; 2025 NEXUS SYSTEMS. ALL RIGHTS RESERVED.</p>
       </footer>
     </div>
   );

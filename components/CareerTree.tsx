@@ -59,13 +59,6 @@ const CareerTree: React.FC<CareerTreeProps> = ({ items }) => {
         style={{ height: `${scrollProgress * 100}%` }}
       ></div>
       
-      {/* Start Node */}
-      <div className="relative z-10 flex justify-center mb-16">
-         <div className="bg-slate-900/90 backdrop-blur border border-blue-500 text-blue-400 px-6 py-2 rounded-lg text-sm font-bold tracking-widest uppercase shadow-[0_0_25px_rgba(59,130,246,0.3)] transform hover:scale-105 transition-transform cursor-default">
-            Timeline Initialized
-         </div>
-      </div>
-
       {items.map((item, index) => {
         const isEven = index % 2 === 0;
         const isVisible = visibleItems.includes(item.id);
@@ -91,15 +84,6 @@ const CareerTree: React.FC<CareerTreeProps> = ({ items }) => {
           >
             {/* Empty space for opposite side to keep balance */}
             <div className="flex-1 hidden md:block"></div>
-
-            {/* Central Node / Joint */}
-            <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-black border-2 border-blue-400 z-20 transition-all duration-500 shadow-[0_0_15px_rgba(59,130,246,1)]"
-                 style={{ 
-                   transform: `translateX(-50%) scale(${isVisible ? 1.2 : 0.8})`,
-                   opacity: isVisible ? 1 : 0.5,
-                   backgroundColor: isVisible ? '#3b82f6' : '#000',
-                 }}>
-            </div>
 
             {/* Content Card */}
             <div className={`flex-1 w-full pl-12 md:pl-0 ${isEven ? 'md:pr-12 text-right' : 'md:pl-12 text-left'}`}>
@@ -162,13 +146,6 @@ const CareerTree: React.FC<CareerTreeProps> = ({ items }) => {
           </div>
         );
       })}
-       
-       {/* End Node */}
-       <div className="relative z-10 flex justify-center mt-8">
-         <div className="bg-slate-900 border border-green-500/50 text-green-400 px-8 py-3 rounded-xl text-sm font-bold tracking-widest uppercase shadow-[0_0_20px_rgba(34,197,94,0.2)] animate-pulse">
-            System Origin
-         </div>
-      </div>
     </div>
   );
 };
