@@ -253,8 +253,11 @@ const App: React.FC = () => {
           <div className="hidden md:flex space-x-6 lg:space-x-8">
             {[
               { id: ViewState.HOME, label: 'BASE' },
-              { id: ViewState.PROJECTS, label: 'PROJECTS' },
-              { id: ViewState.SKILLS, label: 'SKILLS' },
+              // Show Projects and Skills only in development
+              ...(import.meta.env.DEV ? [
+                { id: ViewState.PROJECTS, label: 'PROJECTS' },
+                { id: ViewState.SKILLS, label: 'SKILLS' },
+              ] : []),
               { id: ViewState.CONTACT, label: 'UPLINK' },
             ].map((item) => (
               <button
