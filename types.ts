@@ -50,7 +50,7 @@ export interface CareerItem {
 export enum ViewState {
   HOME = 'HOME',
   PROJECTS = 'PROJECTS',
-  SKILLS = 'SKILLS',
+  ABOUT = 'ABOUT',
   EXPERIENCE = 'EXPERIENCE',
-  CONTACT = 'CONTACT'
+  BLOG = 'BLOG'
 }

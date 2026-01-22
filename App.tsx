@@ -4,10 +4,13 @@ import AIChat from './components/AIChat';
 import SkillChart from './components/SkillChart';
 import TechNetwork from './components/TechNetwork';
 import CareerTree from './components/CareerTree';
+import CVPipeline from './components/CVPipeline';
 import CareerHighlights from './components/CareerHighlights';
+import ContactForm from './components/ContactForm';
 import WhatImLookingFor from './components/WhatImLookingFor';
 import WhatYouGet from './components/WhatYouGet';
 import { Project, ViewState, CareerItem } from './types';
+import headshotImage from './Headshot.PNG';
 
 const projects: Project[] = [
   {
@@ -138,10 +141,10 @@ const App: React.FC = () => {
                 <span className="skew-x-[12deg] block">VIEW WORK</span>
               </button>
               <button 
-                onClick={() => setActiveView(ViewState.CONTACT)}
+                onClick={() => setActiveView(ViewState.BLOG)}
                 className="px-8 py-3 bg-transparent hover:bg-white/10 text-white font-bold rounded-none skew-x-[-12deg] transition-all border border-white/30"
               >
-                 <span className="skew-x-[12deg] block">CONTACT</span>
+                 <span className="skew-x-[12deg] block">BLOG</span>
               </button>
             </div>
 
@@ -168,7 +171,7 @@ const App: React.FC = () => {
 
             {/* What You Get Section - Continues from WhatImLookingFor */}
             <div className="w-full pt-12 pb-20">
-               <h2 className="text-4xl font-bold mb-4 text-center neon-text tracking-widest">WHAT DO YOU GET FROM ME?</h2>
+               <h2 className="text-4xl font-bold mb-4 text-center neon-text tracking-widest">WHAT YOU GET FROM ME</h2>
                <p className="text-gray-400 mb-8">My work principles.</p>
                <WhatYouGet />
             </div>
@@ -186,79 +189,191 @@ const App: React.FC = () => {
         return (
           <div className="pt-24 px-4 max-w-7xl mx-auto min-h-screen">
             <h2 className="text-5xl font-bold mb-12 text-center neon-text">DEPLOYED UNITS</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((p) => (
-                <div key={p.id} className="group relative bg-slate-900 border border-slate-800 hover:border-blue-500/50 transition-all duration-300 rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]">
-                  <div className="h-48 overflow-hidden">
-                    <img src={p.imageUrl} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter grayscale group-hover:grayscale-0" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">{p.title}</h3>
-                    <p className="text-gray-400 mb-4 text-sm leading-relaxed">{p.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {p.technologies.map((tech, i) => (
-                        <span key={i} className="px-2 py-1 bg-slate-800 text-blue-300 text-xs rounded border border-slate-700">{tech}</span>
-                      ))}
-                    </div>
-                    <a href={p.link} className="inline-block text-white border-b border-blue-500 pb-0.5 hover:text-blue-400 transition-colors text-sm uppercase tracking-wider">
-                      Initialize Link &rarr;
-                    </a>
-                  </div>
-                </div>
-              ))}
+            
+            {/* CV Pipeline Demo Section */}
+            <div className="mb-20">
+              <h3 className="text-2xl font-bold text-blue-400 mb-6 tracking-widest uppercase text-center md:text-left border-l-4 border-blue-500 pl-4">
+                Active Computer Vision Pipeline
+              </h3>
+              <p className="text-gray-400 mb-8 max-w-3xl">
+                Interact with a live demonstration of my object detection pipeline. 
+                Select a sample image from the dataset, adjust confidence thresholds, and execute the model in real-time.
+              </p>
+              <CVPipeline />
             </div>
           </div>
         );
 
-      case ViewState.SKILLS:
+      case ViewState.ABOUT:
         return (
-          <div className="pt-24 px-4 max-w-6xl mx-auto min-h-screen">
-             <h2 className="text-5xl font-bold mb-8 text-center neon-text">NEURAL NET</h2>
-             <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-               Visualizing the interconnections between core technologies in my stack.
-               Drag nodes to interact with the gravitational field.
-             </p>
-             <div className="flex flex-col lg:flex-row gap-8 items-center justify-center">
-                <div className="w-full lg:w-2/3">
+          <div className="pt-24 px-4 max-w-7xl mx-auto min-h-screen">
+             <h2 className="text-5xl font-bold mb-12 text-center neon-text">ABOUT ME</h2>
+             
+             {/* Profile & Info Section */}
+             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 items-center">
+                
+                {/* Image */}
+                <div className="relative flex justify-center lg:justify-end">
+                   <div className="w-64 h-64 md:w-80 md:h-80 relative">
+                     <div className="absolute inset-0 border-2 border-blue-500 rounded-full animate-[spin_10s_linear_infinite] opacity-50 border-t-transparent border-l-transparent"></div>
+                     <div className="absolute inset-2 border-2 border-purple-500 rounded-full animate-[spin_15s_linear_infinite_reverse] opacity-50 border-b-transparent border-r-transparent"></div>
+                     <div className="absolute inset-4 rounded-full overflow-hidden border-4 border-slate-800 shadow-[0_0_30px_rgba(59,130,246,0.3)]">
+                        <img 
+                          src={headshotImage} 
+                          alt="Michael Tiernan" 
+                          className="w-full h-full object-cover filter hover:brightness-110 transition-all"
+                        />
+                     </div>
+                   </div>
+                </div>
+
+                {/* Bio & Contact */}
+                <div className="space-y-6 text-center lg:text-left">
+                   <h3 className="text-3xl font-bold text-white">
+                     Michael Tiernan
+                     <span className="block text-lg font-normal text-blue-400 mt-1 font-mono">AI Engineer</span>
+                   </h3>
+                   <p className="text-gray-300 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                     Continuous learning and pushing boundaries to build solutions that solve complex problems. Proven track record of building products in both corporate and startup environments.
+                   </p>
+                   
+                   <div className="flex flex-col gap-4 max-w-sm mx-auto lg:mx-0">
+                      {/* Contact Form */}
+                      <ContactForm />
+                      
+                      {/* Calendar Embed Placeholder */}
+                      <div className="p-4 bg-slate-900/50 border border-slate-700 rounded-lg flex items-center gap-4 relative overflow-hidden group cursor-pointer hover:border-blue-500/50 transition-colors">
+                        <span className="text-purple-400">📅</span>
+                        <div className="text-left z-10">
+                           <div className="text-xs text-gray-500 uppercase tracking-widest">Availability</div>
+                           <div className="text-white font-bold group-hover:text-blue-400 transition-colors">Schedule a Call</div>
+                        </div>
+                        <div className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-600 group-hover:translate-x-1 transition-transform">→</div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+
+             {/* Skills Network Section */}
+             <div className="border-t border-slate-800/50 pt-12">
+               <h3 className="text-2xl font-bold mb-8 text-center neon-text tracking-widest">TECHNICAL ARSENAL</h3>
+               <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+                 Visualizing the interconnections between core technologies in my stack.
+               </p>
+               <div className="h-[600px] w-full border border-slate-800 rounded-xl bg-black/20 backdrop-blur-sm overflow-hidden relative">
                   <TechNetwork />
-                </div>
-                <div className="w-full lg:w-1/3 space-y-4">
-                  <div className="p-6 bg-slate-900/50 border border-slate-700 rounded-xl">
-                    <h3 className="text-xl font-bold text-blue-400 mb-2">Core</h3>
-                    <p className="text-sm text-gray-300">Expertise in building scalable front-end architectures using React and TypeScript.</p>
+                  <div className="absolute top-4 right-4 p-4 bg-black/60 backdrop-blur rounded border border-slate-700 max-w-xs text-xs">
+                    <div className="font-bold text-blue-400 mb-1">Core Stack</div>
+                    <p className="text-gray-400">React, TypeScript, Python, TensorFlow</p>
                   </div>
-                   <div className="p-6 bg-slate-900/50 border border-slate-700 rounded-xl">
-                    <h3 className="text-xl font-bold text-purple-400 mb-2">AI Integration</h3>
-                    <p className="text-sm text-gray-300">Seamless implementation of LLMs like Gemini to create adaptive user interfaces.</p>
-                  </div>
-                </div>
+               </div>
              </div>
           </div>
         );
 
-      case ViewState.CONTACT:
+      case ViewState.BLOG:
         return (
-          <div className="pt-24 px-4 max-w-3xl mx-auto min-h-screen flex flex-col items-center">
-            <h2 className="text-5xl font-bold mb-12 text-center neon-text">ESTABLISH UPLINK</h2>
-            <form className="w-full space-y-6 bg-slate-900/50 p-8 rounded-2xl border border-slate-700 backdrop-blur-sm" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-xs uppercase tracking-widest text-blue-400">Identity</label>
-                  <input type="text" className="w-full bg-black/50 border border-slate-700 rounded p-3 text-white focus:border-blue-500 focus:outline-none transition-colors" placeholder="Name" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs uppercase tracking-widest text-blue-400">Frequency</label>
-                  <input type="email" className="w-full bg-black/50 border border-slate-700 rounded p-3 text-white focus:border-blue-500 focus:outline-none transition-colors" placeholder="Email" />
+          <div className="pt-24 px-4 max-w-5xl mx-auto min-h-screen">
+            <h2 className="text-5xl font-bold mb-12 text-center neon-text">TRANSMISSIONS</h2>
+            
+            {/* Featured Post */}
+            <div className="mb-20 group cursor-pointer">
+              <div className="relative h-[400px] rounded-2xl overflow-hidden border border-slate-700 group-hover:border-blue-500/50 transition-all shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop" 
+                  alt="AI Vision"
+                  className="w-full h-full object-cover filter brightness-75 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent">
+                  <div className="absolute bottom-0 left-0 p-8 md:p-12">
+                     <span className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-blue-900 bg-blue-400 rounded uppercase">Computer Vision</span>
+                     <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight group-hover:text-blue-300 transition-colors">
+                       The Future of Object Detection in Hospitality
+                     </h3>
+                     <p className="text-gray-300 text-lg max-w-2xl mb-6 line-clamp-2">
+                       How we are using advanced YOLO models to automate inventory tracking and improve guest experiences in real-time.
+                     </p>
+                     <div className="flex items-center text-sm text-gray-400 font-mono">
+                        <span>Jan 24, 2026</span>
+                        <span className="mx-3">•</span>
+                        <span>8 min read</span>
+                     </div>
+                  </div>
                 </div>
               </div>
-              <div className="space-y-2">
-                <label className="text-xs uppercase tracking-widest text-blue-400">Transmission</label>
-                <textarea rows={5} className="w-full bg-black/50 border border-slate-700 rounded p-3 text-white focus:border-blue-500 focus:outline-none transition-colors" placeholder="Message content..." />
-              </div>
-              <button className="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded uppercase tracking-widest transition-all shadow-[0_0_15px_rgba(59,130,246,0.4)]">
-                Transmit Data
-              </button>
-            </form>
+            </div>
+
+            {/* Recent Posts Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+               {[
+                 {
+                   title: "Scaling LLM Agents for Enterprise",
+                   excerpt: "Challenges and solutions when deploying multi-agent systems in production environments.",
+                   date: "Jan 15, 2026",
+                   tag: "LLMs",
+                   color: "purple"
+                 },
+                 {
+                   title: "From Seed to Series A: A Tech Lead's Perspective",
+                   excerpt: "Lessons learned building the technical foundation of a high-growth startup.",
+                   date: "Dec 28, 2025",
+                   tag: "Business",
+                   color: "green"
+                 },
+                 {
+                   title: "Optimizing React Performance for Data Visualization",
+                   excerpt: "Techniques for rendering thousands of data points without blocking the main thread.",
+                   date: "Dec 10, 2025",
+                   tag: "Engineering",
+                   color: "blue"
+                 },
+                 {
+                   title: "The Ethics of Autonomous Systems",
+                   excerpt: "Navigating the moral landscape of deploying AI in public spaces.",
+                   date: "Nov 22, 2025",
+                   tag: "AI Ethics",
+                   color: "pink"
+                 }
+               ].map((post, i) => (
+                 <div key={i} className="flex flex-col group cursor-pointer">
+                    <div className="relative h-64 mb-6 overflow-hidden rounded-xl border border-slate-800">
+                      <div className={`absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800 group-hover:scale-105 transition-transform duration-500`}></div>
+                      {/* Abstract pattern overlay */}
+                      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-500 via-transparent to-transparent"></div>
+                      
+                      <div className="absolute top-6 left-6">
+                        <span className={`px-3 py-1 text-xs font-bold tracking-widest text-${post.color}-300 bg-${post.color}-900/30 border border-${post.color}-500/30 rounded uppercase`}>
+                          {post.tag}
+                        </span>
+                      </div>
+                    </div>
+                    <h4 className="text-2xl font-bold text-gray-100 mb-3 group-hover:text-blue-400 transition-colors">
+                      {post.title}
+                    </h4>
+                    <p className="text-gray-400 mb-4 line-clamp-2 leading-relaxed">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex items-center text-xs text-gray-500 font-mono uppercase tracking-widest mt-auto">
+                       <span>{post.date}</span>
+                       <span className="mx-2">•</span>
+                       <span className="group-hover:translate-x-1 transition-transform text-blue-500">Read Article →</span>
+                    </div>
+                 </div>
+               ))}
+            </div>
+
+            {/* Newsletter / RSS */}
+            <div className="mt-24 p-12 bg-slate-900/30 border border-slate-800 rounded-2xl text-center relative overflow-hidden">
+               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
+               <h3 className="text-2xl font-bold text-white mb-4">Subscribe to Intelligence Feed</h3>
+               <p className="text-gray-400 mb-8 max-w-lg mx-auto">Get the latest deep dives on AI engineering and startup strategies delivered to your inbox.</p>
+               <div className="flex max-w-md mx-auto">
+                 <input type="email" placeholder="email@address.com" className="flex-1 bg-black/50 border border-slate-700 rounded-l px-4 py-3 text-white focus:outline-none focus:border-blue-500" />
+                 <button className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-r font-bold uppercase tracking-widest text-sm transition-colors">
+                   Connect
+                 </button>
+               </div>
+            </div>
           </div>
         );
     }
@@ -280,9 +395,9 @@ const App: React.FC = () => {
               // Show Projects and Skills only in development
               ...(import.meta.env.DEV ? [
                 { id: ViewState.PROJECTS, label: 'PROJECTS' },
-                { id: ViewState.SKILLS, label: 'SKILLS' },
+                { id: ViewState.ABOUT, label: 'ABOUT ME' },
               ] : []),
-              { id: ViewState.CONTACT, label: 'UPLINK' },
+              { id: ViewState.BLOG, label: 'BLOG' },
             ].map((item) => (
               <button
                 key={item.id}
