@@ -390,6 +390,7 @@ const App: React.FC = () => {
             MICHAEL TIERNAN
           </div>
           <div className="hidden md:flex space-x-6 lg:space-x-8">
+            {/* Navigation items - Visible in all environments */}
             {[
               { id: ViewState.HOME, label: 'BASE' },
               { id: ViewState.PROJECTS, label: 'PROJECTS' },
